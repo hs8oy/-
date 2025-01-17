@@ -1,606 +1,657 @@
 <!DOCTYPE html>
 <html dir="rtl" lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="برنامج كابتن للبيت الزبيدي">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta thhp-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="keywords" content=" مطعم, بيت الزبيدي, طلبات, طلب طعام, طلب طعام اونلاين, طلبات اونلاين, طلبات مطعم">
+    <meta name="author" content="hasan aamer">
     <title>مطعم بيت الزبيدي</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;700&display=swap" rel="stylesheet">
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-            color: #fff;
-            font-family: 'Noto Kufi Arabic', sans-serif;
-        }
-        
-        
-        body {
-            
-            line-height: 1.6;
-            background: #b14911;
-        }
-        
-        
-        .m{
-            color: rgb(255, 255, 255);
-            background: red;
-            border-radius: 12px;
-            box-shadow: 1px 1px 10px #000;
-            padding:5px 10px;
-            font-weight: 700;
-        }
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('hero-bg.jpg');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: clamp(2rem, 5vw, 4rem) 1rem;
-            min-height: 300px;
-        }
-        
-        .hero-content h1 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            margin-bottom: 1rem;
-        }
-        
-        .hero-content p {
-            font-size: clamp(1rem, 3vw, 1.5rem);
-            margin-bottom: 2rem;
-        }
-        
-        .menu-links {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1rem;
-            padding: 1rem;
-        }
-        
-        .category-link {
-            color: white;
-            text-decoration: none;
-            padding: 0.5rem 1rem;
-            background-color: rgba(255,255,255,0.2);
-            border-radius: 4px;
-            font-size: clamp(0.875rem, 2vw, 1rem);
-        }
-        
-        .menu-section {
-            padding: 2rem 1rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .menu-title {
-            text-align: center;
-            font-size: clamp(1.75rem, 4vw, 2.5rem);
-            margin-bottom: 2rem;
-            background: #295f3d;
-            border-radius: 10px;
-            padding: 10px 0 ;
-        }
-        
-        .menu-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            padding: 1rem;
-        }
-        
-        .menu-card {
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            overflow: hidden;
-            transition: transform 0.3s ease;
-        }
-        
-        .menu-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        
-        
-        .menu-card-content {
-            padding: 1rem;
-        }
-        
-        .menu-card-title {
-            font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-            margin-bottom: 0.5rem;
-            color: #000;
-            
-        }
-        .menu-card-price {
-            font-size: clamp(1rem, 2.5vw, 1.2rem);
-            font-weight: bold;
-            color: #e44d26;
-            margin-bottom: 1rem;
-        }
-        
-        .quantity-control {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            color: #000;
-        }
-        
-        .quantity-btn {
-            background: #e44d26;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            width: 40px;
-            cursor: pointer;
-            font-size: 1.2rem;
-        }
-        
-        .quantity-display {
-            font-size: 1.1rem;
-            min-width: 30px;
-            text-align: center;
-            color: #000;
-            font-weight: 900;
-        }
-        
-        /* Cart Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+        color: #fff;
+        font-family: "Noto Kufi Arabic", sans-serif;
+      }
+
+      body {
+        line-height: 1.6;
+        background: #b14911;
+      }
+
+      .m {
+        color: rgb(255, 255, 255);
+        background: red;
+        border-radius: 12px;
+        box-shadow: 1px 1px 10px #000;
+        padding: 5px 10px;
+        font-weight: 700;
+      }
+      .hero {
+        background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url("hero-bg.jpg");
+        background-size: cover;
+        background-position: center;
+        color: white;
+        text-align: center;
+        padding: clamp(2rem, 5vw, 4rem) 1rem;
+        min-height: 300px;
+      }
+
+      .hero-content h1 {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        margin-bottom: 1rem;
+      }
+
+      .hero-content p {
+        font-size: clamp(1rem, 3vw, 1.5rem);
+        margin-bottom: 2rem;
+      }
+
+      .menu-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+        padding: 1rem;
+      }
+
+      .category-link {
+        color: white;
+        text-decoration: none;
+        padding: 0.5rem 1rem;
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 4px;
+        font-size: clamp(0.875rem, 2vw, 1rem);
+      }
+
+      .menu-section {
+        padding: 2rem 1rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .menu-title {
+        text-align: center;
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+        margin-bottom: 2rem;
+        background: #295f3d;
+        border-radius: 10px;
+        padding: 10px 0;
+      }
+
+      .menu-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+        padding: 1rem;
+      }
+
+      .menu-card {
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.3s ease;
+      }
+      .menu-card-content {
+        padding: 1rem;
+      }
+      .menu-card-title {
+        font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+        margin-bottom: 0.5rem;
+        color: #000;
+      }
+      .menu-card-price {
+        font-size: clamp(1rem, 2.5vw, 1.2rem);
+        font-weight: bold;
+        color: #e44d26;
+        margin-bottom: 1rem;
+      }
+
+      .quantity-control {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        color: #000;
+      }
+
+      .quantity-btn {
+        background: #e44d26;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        width: 40px;
+        cursor: pointer;
+        font-size: 1.2rem;
+      }
+
+      .quantity-display {
+        font-size: 1.1rem;
+        min-width: 30px;
+        text-align: center;
+        color: #000;
+        font-weight: 900;
+      }
+
+      /* Cart Styles */
+      .cart-total {
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin-top: 2rem;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        max-height: 80vh;
+        overflow-y: auto;
+        box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+        transform: translateY(100%);
+        transition: transform 0.3s ease;
+      }
+
+      .cart-total.visible {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      .mini-cart {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background: #e44d26;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 50px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        cursor: pointer;
+        z-index: 1001;
+        display: none;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .mini-cart.visible {
+        display: flex;
+      }
+
+      .close-cart {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: #666;
+        padding: 5px 10px;
+      }
+
+      .delivery-form {
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        margin: 20px 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+
+      .form-group select,
+      .form-group input {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-family: "Noto Kufi Arabic", sans-serif;
+      }
+
+      .whatsapp-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        background: #25d366;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        padding: 1rem;
+        width: 100%;
+        max-width: 300px;
+        margin: 1.5rem auto;
+        font-size: clamp(1rem, 2.5vw, 1.2rem);
+        cursor: pointer;
+      }
+
+      @media (min-width: 768px) {
         .cart-total {
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-top: 2rem;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            max-height: 80vh;
-            overflow-y: auto;
-            box-shadow: 0 -4px 10px rgba(0,0,0,0.1);
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
+          max-width: 500px;
+          margin: 0 auto;
+          right: 20px;
+          left: auto;
+          bottom: 80px;
+          border-radius: 12px;
         }
-        
-        .cart-total.visible {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
+      }
+
+      @media (max-width: 320px) {
+        .menu-container {
+          grid-template-columns: 1fr;
         }
-        
-        .mini-cart {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #e44d26;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 50px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-            cursor: pointer;
-            z-index: 1001;
-            display: none;
-            align-items: center;
-            gap: 10px;
+
+        .menu-card-content {
+          padding: 0.8rem;
         }
-        
-        .mini-cart.visible {
-            display: flex;
+
+        .quantity-btn {
+          width: 25px;
+          height: 25px;
         }
-        
-        .close-cart {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: #666;
-            padding: 5px 10px;
-        }
-        
-        .delivery-form {
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        .form-group {
-            margin-bottom: 15px;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-        }
-        
-        .form-group select,
-        .form-group input {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-family: 'Noto Kufi Arabic', sans-serif;
-        }
-        
-        .whatsapp-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            background: #25d366;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            padding: 1rem;
-            width: 100%;
-            max-width: 300px;
-            margin: 1.5rem auto;
-            font-size: clamp(1rem, 2.5vw, 1.2rem);
-            cursor: pointer;
-        }
-        
-        @media (min-width: 768px) {
-            .cart-total {
-                max-width: 500px;
-                margin: 0 auto;
-                right: 20px;
-                left: auto;
-                bottom: 80px;
-                border-radius: 12px;
-            }
-        }
-        
-        @media (max-width: 320px) {
-            .menu-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .menu-card-content {
-                padding: 0.8rem;
-            }
-            
-            .quantity-btn {
-                width: 25px;
-                height: 25px;
-            }
-        }
-        
-        /* أضف هذه الأنماط إلى قسم CSS */
-        
-        .order-summary {
+      }
+
+      /* أضف هذه الأنماط إلى قسم CSS */
+
+      .order-summary {
         background: white;
         border-radius: 8px;
         padding: 15px;
         margin-top: 15px;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        
-        .order-summary-title {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .order-summary-title {
         font-size: 1.1rem;
         font-weight: bold;
         color: #333;
         margin-bottom: 12px;
         padding-bottom: 8px;
         border-bottom: 2px solid #eee;
-        }
-        
-        .order-items {
+      }
+
+      .order-items {
         max-height: 200px;
         overflow-y: auto;
         margin-bottom: 15px;
-        }
-        
-        .order-item {
+      }
+
+      .order-item {
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 8px 0;
         border-bottom: 1px solid #eee;
-        }
-        
-        .order-item:last-child {
+      }
+
+      .order-item:last-child {
         border-bottom: none;
-        }
-        
-        .item-details {
+      }
+
+      .item-details {
         flex-grow: 1;
-        background: #2196F3;
-        }
-        
-        .item-name {
+        background: #2196f3;
+      }
+
+      .item-name {
         font-weight: 500;
         color: #333;
         font-weight: bold;
-        }
-        
-        .item-quantity {
+      }
+
+      .item-quantity {
         color: #666;
         font-size: 0.9rem;
-        
-        }
-        
-        .item-price {
+      }
+
+      .item-price {
         font-weight: bold;
         color: #e44d26;
         margin-right: 10px;
-        font-weight: 600
-        }
-        
-        .order-summary-footer {
+        font-weight: 600;
+      }
+
+      .order-summary-footer {
         border-top: 2px solid #000000;
         padding: 5px 10px;
         margin: 20px 0;
-        
+
         background: #000000;
-        }
-        
-        .summary-row {
+      }
+
+      .summary-row {
         display: flex;
         justify-content: space-between;
         margin-bottom: 8px;
         font-size: 0.95rem;
-        }
-        
-        .summary-row.total {
+      }
+
+      .summary-row.total {
         font-weight: bold;
         color: #e44d26;
         font-size: 1.1rem;
         margin-top: 8px;
         padding-top: 8px;
         border-top: 1px dashed #eee;
-        }
-        
-        .orders-table-container {
-            overflow-x: auto; /* التمرير الأفقي عند الحاجة */
-            margin: 20px 0;
-        }
-        
-        #ordersTable {
-            color: #4CAF50;
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            font-size: clamp(0.8rem, 2vw, 1rem); /* نص متجاوب */
-        }
-        
+      }
+
+      .orders-table-container {
+        overflow-x: auto; /* التمرير الأفقي عند الحاجة */
+        margin: 20px 0;
+        direction: rtl; /* Change table direction */
+      }
+
+      #ordersTable {
+        color: #4caf50;
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        font-size: clamp(0.8rem, 2vw, 1rem); /* نص متجاوب */
+      }
+
+      #ordersTable th,
+      #ordersTable td {
+        color: #000000;
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: center; /* محاذاة وسطية للنص */
+      }
+
+      #ordersTable th {
+        background-color: #f5f5f5;
+        font-weight: bold;
+        color: #333;
+      }
+
+      #ordersTable tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+
+      #ordersTable tr:hover {
+        background-color: #f0f0f0; /* تحسين لون التمرير */
+      }
+
+      /* تحسين الجدول على الشاشات الصغيرة */
+      @media (max-width: 768px) {
         #ordersTable th,
         #ordersTable td {
-            color: #000000;
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: center; /* محاذاة وسطية للنص */
+          font-size: clamp(0.7rem, 2.5vw, 0.9rem); /* تصغير النص */
+          padding: 8px; /* تقليل الحشوات */
         }
-        
-        #ordersTable th {
-            background-color: #f5f5f5;
-            font-weight: bold;
-            color: #333;
-        }
-        
-        #ordersTable tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-        
-        #ordersTable tr:hover {
-            background-color: #f0f0f0; /* تحسين لون التمرير */
-        }
-        
-        /* تحسين الجدول على الشاشات الصغيرة */
-        @media (max-width: 768px) {
-            #ordersTable th,
-            #ordersTable td {
-                font-size: clamp(0.7rem, 2.5vw, 0.9rem); /* تصغير النص */
-                padding: 8px; /* تقليل الحشوات */
-            }
-        }
-        
-        
-        
-        /* أنماط لوحة تحكم الكابتن */
-        
-        .captain-controls {
-            background: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px auto;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            max-width: 1200px;
-        }
-        
+      }
+
+      /* أنماط لوحة تحكم الكابتن */
+
+      .captain-controls {
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        margin: 20px auto;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        max-width: 1200px;
+      }
+
+      .control-buttons {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+
+      .control-btn {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-family: "Noto Kufi Arabic", sans-serif;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .save-btn {
+        background-color: #4caf50;
+        color: white;
+      }
+
+      .orders-table-container {
+        overflow-x: auto;
+      }
+
+      #ordersTable {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+
+      #ordersTable th,
+      #ordersTable td {
+        border: 1px solid #ddd;
+        padding: 12px;
+        text-align: right;
+      }
+
+      #ordersTable th {
+        background-color: #f5f5f5;
+        font-weight: bold;
+      }
+
+      #ordersTable tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+
+      #ordersTable tr:hover {
+        background-color: #f5f5f5;
+      }
+
+      @media print {
         .control-buttons {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
+          display: none;
         }
-        
-        .control-btn {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-family: 'Noto Kufi Arabic', sans-serif;
-            display: flex;
-            align-items: center;
-            gap: 8px;
+
+        body * {
+          visibility: hidden;
         }
-        
-        .save-btn {
-            background-color: #4CAF50;
-            color: white;
+
+        #ordersTable,
+        #ordersTable * {
+          visibility: visible;
         }
-        
-        .print-btn {
-            background-color: #2196F3;
-            color: white;
-        }
-        
-        .orders-table-container {
-            overflow-x: auto;
-        }
-        
+
         #ordersTable {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
+          position: absolute;
+          left: 0;
+          top: 0;
         }
-        
-        #ordersTable th,
-        #ordersTable td {
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: right;
-        }
-        
-        #ordersTable th {
-            background-color: #f5f5f5;
-            font-weight: bold;
-        }
-        
-        #ordersTable tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-        
-        #ordersTable tr:hover {
-            background-color: #f5f5f5;
-        }
-        
-        @media print {
-            .control-buttons {
-                display: none;
-            }
-            
-            body * {
-                visibility: hidden;
-            }
-            
-            #ordersTable, #ordersTable * {
-                visibility: visible;
-            }
-            
-            #ordersTable {
-                position: absolute;
-                left: 0;
-                top: 0;
-            }
-        }
-        
-        
-        
+      }
+
+      /* Vertical Orders Table Styles */
+      .order-details {
+        background: #fff;
+        border-radius: 8px;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      .order-details h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+        color: #e44d26;
+      }
+
+      .order-details p {
+        font-size: 1rem;
+        color: #666;
+      }
+
+      .order-actions {
+        display: flex;
+        gap: 10px;
+        margin-top: 1rem;
+      }
+
+      .order-actions button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-family: "Noto Kufi Arabic", sans-serif;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .edit-btn {
+        background-color: #286329;
+        color: white;
+      }
+
+      .print-btn {
+        background-color: #286329;
+        color: white;
+        padding: 5px 10px;
+        font-weight: 700;
+      }
+
+      .view-btn {
+        background-color: #286329;
+        color: white;
+      }
+
+      .o {
+        margin: 18px 10px;
+        background: #000;
+        border-radius: 12px;
+        padding: 20px 40px;
+        box-shadow: 1px 1px 20px #000;
+      }
+      .o li {
+        color: #ffffff;
+        font-weight: bold;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1>بيت الزبيدي</h1>
-                <nav class="menu-links" id="categoryLinks">
-                    <!-- سيتم إنشاء الروابط ديناميكياً -->
-                </nav>
-            </div>
-        </section>
+      <section class="hero">
+        <div class="hero-content">
+          <h1>بيت الزبيدي</h1>
+          <nav class="menu-links" id="categoryLinks">
+            <!-- سيتم إنشاء الروابط ديناميكياً -->
+          </nav>
+        </div>
+      </section>
 
-        <section class="menu-section" id="menu">
-            <h2 class="menu-title">المنــــــــــــيو</h2>
-            <div id="menuContainer">
-                <!-- سيتم إنشاء الأقسام والكروت ديناميكياً -->
-            </div>
+      <section class="menu-section" id="menu">
+        <h2 class="menu-title">المنــــــــــــيو</h2>
+        <div id="menuContainer">
+          <!-- سيتم إنشاء الأقسام والكروت ديناميكياً -->
+        </div>
 
-            <div class="cart-total">
-                
-                
+        <div class="cart-total">
+          <div class="summary">
+            <span>المجموع: </span>
+            <span id="total-amount">0</span>
+            <span> د.ع</span>
+          </div>
+        </div>
+        <div id="order-summary"></div>
+      </section>
 
-                <div class="summary">
-                    <span>المجموع: </span>
-                    <span id="total-amount">0</span>
-                    <span> د.ع</span>
-                </div>
-
-            
-            </div>
-            <div id="order-summary"></div>
-        </section>
-
-        <section class="captain-controls">
-            <div class="control-buttons">
-                <button class="control-btn save-btn" onclick="saveOrder()">
-                    <i class="fas fa-save"></i>
-                    حفظ الطلب
-                </button>
-            </div>
-            <div id="ordersTableContainer"></div>
-        </section>
+      <section class="captain-controls">
+        <div class="control-buttons">
+          <button class="control-btn save-btn" onclick="saveOrder()">
+            <i class="fas fa-save"></i>
+            حفظ الطلب
+          </button>
+        </div>
+        <div id="ordersTableContainer"></div>
+      </section>
     </main>
 
     <script>
-        // تحديث الكود مع إصلاح الأخطاء وحذف المطلوب
+      // تحديث الكود مع إصلاح الأخطاء وحذف المطلوب
 
-let menuData = null;
-let cart = {};
-let orderCounter = 1;
-let orders = [];
+      let menuData = null;
+      let cart = {};
+      let orderCounter = 1;
+      let orders = [];
 
-async function loadMenuData() {
-    try {
-        const response = await fetch('menu-data.json');
-        menuData = await response.json();
-        renderMenu();
-        setupCart();
-        renderCategoryLinks();
-        loadOrdersFromLocalStorage(); // تحميل الطلبات من localStorage عند بدء التطبيق
-    } catch (error) {
-        console.error('Error loading menu data:', error);
-    }
-}
+      async function loadMenuData() {
+        try {
+          const response = await fetch("menu-data.json");
+          menuData = await response.json();
+          renderMenu();
+          setupCart();
+          renderCategoryLinks();
+          loadOrdersFromLocalStorage(); // تحميل الطلبات من localStorage عند بدء التطبيق
+        } catch (error) {
+          console.error("Error loading menu data:", error);
+        }
+      }
 
-function renderCategoryLinks() {
-    const linksContainer = document.getElementById('categoryLinks');
-    menuData.categories.forEach(category => {
-        const link = document.createElement('a');
-        link.href = `#${category.id}`;
-        link.className = 'category-link';
-        link.textContent = category.name;
-        linksContainer.appendChild(link);
-    });
-}
-
-function renderMenu() {
-    const menuContainer = document.getElementById('menuContainer');
-    menuData.categories.forEach(category => {
-        const categoryTitle = document.createElement('h3');
-        categoryTitle.id = category.id;
-        categoryTitle.className = 'category-title';
-        categoryTitle.textContent = category.name;
-        menuContainer.appendChild(categoryTitle);
-
-        const cardsContainer = document.createElement('div');
-        cardsContainer.className = 'menu-container';
-
-        category.items.forEach(item => {
-            cardsContainer.appendChild(createMenuCard(item));
+      function renderCategoryLinks() {
+        const linksContainer = document.getElementById("categoryLinks");
+        menuData.categories.forEach((category) => {
+          const link = document.createElement("a");
+          link.href = `#${category.id}`;
+          link.className = "category-link";
+          link.textContent = category.name;
+          linksContainer.appendChild(link);
         });
+      }
 
-        menuContainer.appendChild(cardsContainer);
-    });
-}
+      function renderMenu() {
+        const menuContainer = document.getElementById("menuContainer");
+        menuData.categories.forEach((category) => {
+          const categoryTitle = document.createElement("h3");
+          categoryTitle.id = category.id;
+          categoryTitle.className = "category-title";
+          categoryTitle.textContent = category.name;
+          menuContainer.appendChild(categoryTitle);
 
-function createMenuCard(item) {
-    const card = document.createElement('div');
-    card.className = 'menu-card';
-    card.dataset.name = item.name;
-    card.dataset.price = item.price;
+          const cardsContainer = document.createElement("div");
+          cardsContainer.className = "menu-container";
 
-    card.innerHTML = `
+          category.items.forEach((item) => {
+            cardsContainer.appendChild(createMenuCard(item));
+          });
+
+          menuContainer.appendChild(cardsContainer);
+        });
+      }
+
+      function createMenuCard(item) {
+        const card = document.createElement("div");
+        card.className = "menu-card";
+        card.dataset.name = item.name;
+        card.dataset.price = item.price;
+
+        card.innerHTML = `
         <div class="menu-card-content">
             <h3 class="menu-card-title">${item.name}</h3>
             <div class="menu-card-price">${item.price.toLocaleString()} د.ع</div>
@@ -612,75 +663,76 @@ function createMenuCard(item) {
         </div>
     `;
 
-    return card;
-}
+        return card;
+      }
 
-function setupCart() {
-    menuData.categories.forEach(category => {
-        category.items.forEach(item => {
+      function setupCart() {
+        menuData.categories.forEach((category) => {
+          category.items.forEach((item) => {
             cart[item.name] = {
-                quantity: 0,
-                price: item.price
+              quantity: 0,
+              price: item.price,
             };
+          });
         });
-    });
 
-    document.querySelectorAll('.menu-card').forEach(card => {
-        const plusBtn = card.querySelector('.plus');
-        const minusBtn = card.querySelector('.minus');
-        const quantityDisplay = card.querySelector('.quantity-display');
-        const itemName = card.dataset.name;
+        document.querySelectorAll(".menu-card").forEach((card) => {
+          const plusBtn = card.querySelector(".plus");
+          const minusBtn = card.querySelector(".minus");
+          const quantityDisplay = card.querySelector(".quantity-display");
+          const itemName = card.dataset.name;
 
-        plusBtn.addEventListener('click', () => {
+          plusBtn.addEventListener("click", () => {
             cart[itemName].quantity += 1;
             quantityDisplay.textContent = cart[itemName].quantity;
             updateTotal();
-        });
+          });
 
-        minusBtn.addEventListener('click', () => {
+          minusBtn.addEventListener("click", () => {
             if (cart[itemName].quantity > 0) {
-                cart[itemName].quantity -= 1;
-                quantityDisplay.textContent = cart[itemName].quantity;
-                updateTotal();
+              cart[itemName].quantity -= 1;
+              quantityDisplay.textContent = cart[itemName].quantity;
+              updateTotal();
             }
+          });
         });
-    });
-}
+      }
 
-function updateTotal() {
-    let total = 0;
-    let itemCount = 0;
-    let hasItems = false;
+      function updateTotal() {
+        let total = 0;
+        let itemCount = 0;
+        let hasItems = false;
 
-    for (let item in cart) {
-        if (cart[item].quantity > 0) {
+        for (let item in cart) {
+          if (cart[item].quantity > 0) {
             total += cart[item].quantity * cart[item].price;
             itemCount += cart[item].quantity;
             hasItems = true;
+          }
         }
-    }
 
-    document.getElementById('total-amount').textContent = total.toLocaleString();
-    updateOrderSummary();
+        document.getElementById("total-amount").textContent =
+          total.toLocaleString();
+        updateOrderSummary();
 
-    const miniCart = document.querySelector('.mini-cart');
-    if (hasItems) {
-        miniCart.classList.add('visible');
-        document.querySelector('.mini-cart-total').textContent = itemCount;
-    } else {
-        miniCart.classList.remove('visible');
-    }
-}
+        const miniCart = document.querySelector(".mini-cart");
+        if (hasItems) {
+          miniCart.classList.add("visible");
+          document.querySelector(".mini-cart-total").textContent = itemCount;
+        } else {
+          miniCart.classList.remove("visible");
+        }
+      }
 
-function updateOrderSummary() {
-    const orderSummary = document.getElementById('order-summary');
-    let subtotal = 0;
-    let itemsCount = 0;
+      function updateOrderSummary() {
+        const orderSummary = document.getElementById("order-summary");
+        let subtotal = 0;
+        let itemsCount = 0;
 
-    let summaryHTML = '<div class="order-summary">';
+        let summaryHTML = '<div class="order-summary">';
 
-    for (let item in cart) {
-        if (cart[item].quantity > 0) {
+        for (let item in cart) {
+          if (cart[item].quantity > 0) {
             const itemTotal = cart[item].quantity * cart[item].price;
             subtotal += itemTotal;
             itemsCount += cart[item].quantity;
@@ -692,10 +744,10 @@ function updateOrderSummary() {
                     <span class="item-price">${itemTotal.toLocaleString()} د.ع</span>
                 </div>
             `;
+          }
         }
-    }
 
-    summaryHTML += `
+        summaryHTML += `
         <div class="order-summary-footer">
             <div class="summary-row">
                 <span>المجموع الكلي :</span>
@@ -704,112 +756,372 @@ function updateOrderSummary() {
         </div>
     </div>`;
 
-    orderSummary.innerHTML = itemsCount > 0 ? summaryHTML : '';
-}
+        orderSummary.innerHTML = itemsCount > 0 ? summaryHTML : "";
+      }
 
-function saveOrder() {
-    const currentOrder = {
-        id: orderCounter++,
-        timestamp: new Date().toLocaleString('ar-IQ'),
-        items: [],
-        total: 0
-    };
+      function saveOrder() {
+        const currentOrder = {
+          id: orderCounter++,
+          timestamp: new Date().toLocaleString("ar-IQ"),
+          items: [],
+          total: 0,
+        };
 
-    for (let item in cart) {
-        if (cart[item].quantity > 0) {
+        for (let item in cart) {
+          if (cart[item].quantity > 0) {
             currentOrder.items.push({
-                name: item,
-                quantity: cart[item].quantity,
-                price: cart[item].price,
-                total: cart[item].quantity * cart[item].price
+              name: item,
+              quantity: cart[item].quantity,
+              price: cart[item].price,
+              total: cart[item].quantity * cart[item].price,
             });
             currentOrder.total += cart[item].quantity * cart[item].price;
+          }
         }
-    }
 
-    if (currentOrder.items.length > 0) {
-        orders.push(currentOrder);
-        updateOrdersTable();
-        saveOrdersToLocalStorage(); // حفظ الطلبات في localStorage بعد كل عملية حفظ
-        resetCart();
-        alert('تم حفظ الطلب بنجاح!');
-    }
-}
+        if (currentOrder.items.length > 0) {
+          orders.push(currentOrder);
+          updateOrdersTable();
+          saveOrdersToLocalStorage(); // حفظ الطلبات في localStorage بعد كل عملية حفظ
+          resetCart();
+          alert("تم حفظ الطلب بنجاح!");
+        }
+      }
 
-function resetCart() {
-    for (let item in cart) {
-        cart[item].quantity = 0;
-    }
-    document.querySelectorAll('.quantity-display').forEach(display => {
-        display.textContent = '0';
-    });
-    updateTotal();
-}
+      function resetCart() {
+        for (let item in cart) {
+          cart[item].quantity = 0;
+        }
+        document.querySelectorAll(".quantity-display").forEach((display) => {
+          display.textContent = "0";
+        });
+        updateTotal();
+      }
 
-function updateOrdersTable() {
-    const tableContainer = document.getElementById('ordersTableContainer');
-    if (!orders.length) {
-        tableContainer.innerHTML = '<p>لا توجد طلبات محفوظة</p>';
-        return;
-    }
+      function updateOrdersTable() {
+        const tableContainer = document.getElementById("ordersTableContainer");
+        if (!orders.length) {
+          tableContainer.innerHTML = "<p>لا توجد طلبات محفوظة</p>";
+          return;
+        }
 
-    const today = new Date().toLocaleDateString('ar-IQ');
+        let tableHTML = "";
 
-    let tableHTML = `
-        <table id="ordersTable">
-            <thead>
-                <tr>
-                    <th>رقم الطلب</th>
-                    <th>التاريخ والوقت</th>
-                    <th>تفاصيل الطلب</th>
-                    <th>المجموع</th>
-                    <th>إجراءات</th>
-                </tr>
-            </thead>
-            <tbody>
-    `;
-
-    orders.forEach(order => {
-        const itemCount = order.items.reduce((count, item) => count + item.quantity, 0);
-        tableHTML += `
-            <tr class="a" >
-                <td>${order.id}</td>
-                <td>${order.timestamp}</td>
-                <td>${order.items.map(item => 
-                    `${item.name}: ${item.quantity} × ${item.price} = ${item.total}`
-                ).join('<br>')}</td>
-                
-                <td>${order.total.toLocaleString()} د.ع</td>
-                <td><button class="m"  onclick="deleteOrder(${order.id})">حذف</button></td>
-            </tr>
+        orders.forEach((order) => {
+          tableHTML += `
+            <div class="order-details">
+                <h3>رقم الطلب: ${order.id}</h3>
+                <p>التاريخ والوقت: ${order.timestamp}</p>
+                <p>تفاصيل الطلب:</p>
+                <p>المجموع: ${order.total.toLocaleString()} د.ع</p>
+                <div class="order-actions">
+                    <button class="edit-btn" onclick="editOrder(${
+                      order.id
+                    })">تعديل</button>
+                    <button class="view-btn" onclick="viewOrder(${
+                      order.id
+                    })">عرض</button>
+                    <button class="m" onclick="deleteOrder(${
+                      order.id
+                    })">حذف</button>
+                </div>
+            </div>
         `;
-    });
+        });
 
-    tableHTML += '</tbody></table>';
-    tableContainer.innerHTML = tableHTML;
-}
+        tableContainer.innerHTML = tableHTML;
+      }
 
-function deleteOrder(orderId) {
-    orders = orders.filter(order => order.id !== orderId);
-    saveOrdersToLocalStorage();
-    updateOrdersTable();
-}
-
-function saveOrdersToLocalStorage() {
-    localStorage.setItem('orders', JSON.stringify(orders));
-}
-
-function loadOrdersFromLocalStorage() {
-    const savedOrders = localStorage.getItem('orders');
-    if (savedOrders) {
-        orders = JSON.parse(savedOrders);
-        orderCounter = orders.length ? orders[orders.length - 1].id + 1 : 1;
+      function deleteOrder(orderId) {
+        orders = orders.filter((order) => order.id !== orderId);
+        saveOrdersToLocalStorage();
         updateOrdersTable();
-    }
-}
+      }
 
-// تحميل البيانات عند بدء التطبيق
-document.addEventListener('DOMContentLoaded', loadMenuData);
+      function editOrder(orderId) {
+        const order = orders.find((order) => order.id === orderId);
+        if (order) {
+          // Reset all quantities first
+          for (let item in cart) {
+            cart[item].quantity = 0;
+          }
+
+          // Update cart quantities from order
+          order.items.forEach((item) => {
+            if (cart[item.name]) {
+              cart[item.name].quantity = item.quantity;
+              // Update quantity display for this item
+              const menuCard = document.querySelector(
+                `.menu-card[data-name="${item.name}"]`
+              );
+              if (menuCard) {
+                const quantityDisplay =
+                  menuCard.querySelector(".quantity-display");
+                if (quantityDisplay) {
+                  quantityDisplay.textContent = item.quantity;
+                }
+              }
+            }
+          });
+
+          // Update total and cart display
+          updateTotal();
+          updateOrderSummary();
+          alert(`تم تحميل تفاصيل الطلب رقم ${orderId} للتعديل.`);
+        }
+      }
+
+      function formatPrice(price) {
+        return price.toLocaleString("en-IQ");
+      }
+
+      function viewOrder(orderId) {
+        const order = orders.find((order) => order.id === orderId);
+        if (order) {
+          const modal = document.getElementById("orderModal");
+          const modalContent = document.getElementById("modalOrderDetails");
+
+          let detailsHTML = `
+            <h3  style="color: #000;">تفاصيل الطلب رقم ${order.id}</h3>
+            <p style="color: #000;" >التاريخ: ${order.timestamp}</p>
+            <div  class="table-container">
+                <table  style="width:100%; border-collapse: collapse;">
+                    <thead >
+                        <tr >
+                            <th  style=" color: #000; border:1px solid #ddd; padding:8px;">الصنف</th>
+                            <th  style=" color: #000;border:1px solid #ddd; padding:8px;">الكمية</th>
+                            <th   style=" color: #000; border:1px solid #ddd; padding:8px;">السعر</th>
+                            <th   style=" color: #000;border:1px solid #ddd; padding:8px;">المجموع</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${order.items
+                          .map(
+                            (item) => `
+                            <tr>
+                                <td style=" color: #000; border:1px solid #ddd; padding:8px;">${
+                                  item.name
+                                }</td>
+                                <td style=" color: #000; border:1px solid #ddd; padding:8px;">${
+                                  item.quantity
+                                }</td>
+                                <td style=" color: #000; border:1px solid #ddd; padding:8px;">${formatPrice(
+                                  item.price
+                                )}</td>
+                                <td style="  color: #000; border:1px solid #ddd; padding:8px;">${formatPrice(
+                                  item.quantity * item.price
+                                )}</td>
+                            </tr>
+                        `
+                          )
+                          .join("")}
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3" style=" font-weight: bold; color: #000; border:1px solid #ddd; padding:8px;">المجموع الكلي:</td>
+                        <td style=" font-weight: bold; color:  #000; border:1px solid #ddd; padding:8px;">${formatPrice(
+                          order.total
+                        )}</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div class="modal-actions" style="  font-weight: bold;  margin-top: 20px; text-align: center;">
+                <button onclick="printOrderTable(${
+                  order.id
+                })" class="print-btn">طباعة الطلب</button>
+            </div>
+        `;
+
+          modalContent.innerHTML = detailsHTML;
+          modal.style.display = "block";
+        }
+      }
+
+      function printOrderTable(orderId) {
+        const order = orders.find((order) => order.id === orderId);
+        if (order) {
+          const printWindow = window.open("", "", "width=800,height=600");
+          printWindow.document.write(`
+            <html>
+            <head>
+                <title>طباعة الطلب ${order.id}</title>
+                <style>
+                    body { direction: rtl; font-family: Arial, sans-serif; }
+                    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+                    th, td { border: 1px solid #ddd; padding: 8px; text-align: right; }
+                    th { background-color: #f2f2f2; }
+                </style>
+            </head>
+            <body>
+                <h3>تفاصيل الطلب رقم ${order.id}</h3>
+                <p>التاريخ: ${order.timestamp}</p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>الصنف</th>
+                            <th>الكمية</th>
+                            <th>السعر</th>
+                            <th>المجموع</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        ${order.items
+                          .map(
+                            (item) => `
+                            <tr>
+                                <td>${item.name}</td>
+                                <td>${item.quantity}</td>
+                                <td>${formatPrice(item.price)}</td>
+                                <td>${formatPrice(
+                                  item.quantity * item.price
+                                )}</td>
+                            </tr>
+                        `
+                          )
+                          .join("")}
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3">المجموع الكلي:</td>
+                            
+                            <td>${formatPrice(order.total)}</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </body>
+            </html>
+        `);
+          printWindow.document.close();
+          printWindow.print();
+        }
+      }
+
+      function saveOrdersToLocalStorage() {
+        localStorage.setItem("orders", JSON.stringify(orders));
+      }
+
+      function loadOrdersFromLocalStorage() {
+        const savedOrders = localStorage.getItem("orders");
+        if (savedOrders) {
+          orders = JSON.parse(savedOrders);
+          orderCounter = orders.length ? orders[orders.length - 1].id + 1 : 1;
+          updateOrdersTable();
+        }
+      }
+
+      // Add modal HTML structure to document body
+      document.body.insertAdjacentHTML(
+        "beforeend",
+        `
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div id="modalOrderDetails"></div>
+        </div>
+    </div>
+`
+      );
+
+      // Add CSS styles
+      const modalStyles = document.createElement("style");
+      modalStyles.textContent = `
+    .modal {
+        text-align: center;
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.63);
+    }
+    .modal-content {
+        background-color: white;
+        margin: 15% auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 500px;
+        border-radius: 5px;
+        direction: rtl;
+    }
+    .close-modal {
+        color: #aaa;
+        float: left;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .close-modal:hover {
+        color: black;
+    }
+`;
+      document.head.appendChild(modalStyles);
+
+      // Add event listener for closing modal
+      document.querySelector(".close-modal").addEventListener("click", () => {
+        document.getElementById("orderModal").style.display = "none";
+      });
+
+      // Close modal when clicking outside
+      window.addEventListener("click", (event) => {
+        const modal = document.getElementById("orderModal");
+        if (event.target === modal) {
+          modal.style.display = "none";
+        }
+      });
+
+      // Add meta tag for viewport settings
+      const metaTag = document.createElement("meta");
+      metaTag.name = "viewport";
+      metaTag.content = "width=device-width, initial-scale=1.0";
+      document.head.appendChild(metaTag);
+
+      // Add CSS with modified touch settings
+      const noZoomStyles = document.createElement("style");
+      noZoomStyles.textContent = `
+    .menu-card, 
+    .order-details,
+    .modal-content {
+        touch-action: pan-x pan-y;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    button, 
+    input, 
+    .quantity-control {
+        touch-action: manipulation;
+    }
+`;
+      document.head.appendChild(noZoomStyles);
+
+      // Remove previous event listener that was preventing all interactions
+      // Instead, add a more specific double-tap prevention
+      document.addEventListener(
+        "touchend",
+        function (event) {
+          if (
+            event.target.closest(".menu-card, .order-details, .modal-content")
+          ) {
+            const now = Date.now();
+            const timeSince = now - (this.lastTouch || 0);
+
+            if (timeSince < 10) {
+              event.preventDefault();
+            }
+
+            this.lastTouch = now;
+          }
+        },
+        false
+      );
+
+      // ...existing code...
+
+      // تحميل البيانات عند بدء التطبيق
+      document.addEventListener("DOMContentLoaded", loadMenuData);
     </script>
-</body>
+  </body>
 </html>
